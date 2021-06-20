@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { AuthService } from '../../core/services/firebase/auth.service';
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
+  providers: [AuthService]
 })
-export class RegistroComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   myForm:FormGroup;
 
-  constructor(public fb:FormBuilder) { 
+  constructor(
+    public fb:FormBuilder,
+    public auth:AuthService
+  ) { 
     this.myForm = this.fb.group({
-      nombre:[ '', [Validators.required] ],
-      apellido:[ '', [Validators.required]],
-      telefono:[ '' ],
       email:[ '', [Validators.required, Validators.email] ],
       password:[ '', [Validators.required, Validators.minLength(6), Validators.maxLength(10)] ],
     })
@@ -22,7 +23,8 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  registro(){
-    console.log(this.myForm.value)
+  login() {
+    this.auth.login(this.myForm.value);
   }
+
 }
