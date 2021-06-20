@@ -1,1 +1,10 @@
-<p>product-detail works!</p>
+<div [ngSwitch]="state">
+  <div *ngSwitchCase="'loading'"> loading... </div>
+  <div *ngSwitchCase="'ready'"> 
+    <p> Nombre: {{product.name}} </p>
+    <p> Descripcion: {{product.description}} </p>
+    <p> SKU: {{product.sku}} </p>
+    <p> Precio: {{product.price}} </p>
+    <p> Stock: {{product.stock}} </p>
+  </div>
+</div>
