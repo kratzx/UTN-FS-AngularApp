@@ -1,5 +1,7 @@
 <div [ngSwitch]="state">
-  <div *ngSwitchCase="'loading'"> loading... </div>
+  <div class="loading" *ngSwitchCase="'loading'">
+    <mat-spinner></mat-spinner>
+  </div>
   <div *ngSwitchCase="'ready'"> 
     <p> Nombre: {{product.name}} </p>
     <p> Descripcion: {{product.description}} </p>

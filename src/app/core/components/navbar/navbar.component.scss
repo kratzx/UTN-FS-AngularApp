@@ -1,0 +1,22 @@
+button {
+  height: 3em;
+  margin: 0.5em;
+  width: fit-content;
+}
+.container {
+  display: inline-block;
+  vertical-align: middle;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  min-width: 510px;
+}
+.home {
+  font-weight: bold;
+}
+.user {
+  float: right;
+}

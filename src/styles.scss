@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@use '~@angular/material' as mat;
+@include mat.core();
+@import "~@angular/material/theming";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
+$grey-palette: mat.define-palette(mat.$grey-palette);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: auto;
+  background-color: mat.get-color-from-palette($grey-palette, 900);
+  color: mat.get-color-from-palette($grey-palette, "900-contrast");
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.loading {
+  position: fixed;
+  left: 45%;
+  top: 35%;
+  z-index: 1000;
+}

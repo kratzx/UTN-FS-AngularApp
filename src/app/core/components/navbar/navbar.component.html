@@ -1,6 +1,8 @@
-<nav>
-  <button routerLink="/"> Home </button>
-  <button routerLink="/users/login"> Log In </button>
-  <button routerLink="/users/register"> Registrarse </button>
-  <button (click)="logout()"> Log Out </button>
-</nav>
+<mat-toolbar class='navbar' color="primary">
+  <mat-toolbar-row class='container'>
+    <button class="home" mat-button routerLink="/"> <mat-icon>home</mat-icon> TP UTN Angular </button>
+    <button class="user" mat-stroked-button (click)="logout()"> Log Out </button>
+    <button class="user" mat-stroked-button routerLink="/users/login"> Log In </button>
+    <button class="user" mat-raised-button color="accent" routerLink="/users/register"> Registrarse </button>
+  </mat-toolbar-row>
+</mat-toolbar>

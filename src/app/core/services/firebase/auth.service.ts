@@ -28,7 +28,7 @@ export class AuthService {
         await this.saveUserData();
     }
     catch (e) {
-      throw new Error('AuthService.createUser: ' + e);
+      throw new Error(e);
     }
   }
 
@@ -43,7 +43,7 @@ export class AuthService {
       })
     }
     catch (e) {
-      throw new Error ('AuthService.saveUserData: ' + e);
+      throw new Error (e);
     }
   }
 
@@ -55,11 +55,14 @@ export class AuthService {
           this.loginForm.email, 
           this.loginForm.password);
       this.userID = fbRes.user?.uid;
-      if (this.userID)
+      if (this.userID) {
         await this.loadUserData();
+        return true;
+      }
+      return false;
     }
     catch (e) {
-      throw new Error('AuthService.login: ' + e);
+      throw new Error(e);
     }
   }
 
@@ -74,7 +77,7 @@ export class AuthService {
       }
     }
     catch (e) {
-      throw new Error('AuthService.loadUserData: ' + e);
+      throw new Error(e);
     }
   }
 

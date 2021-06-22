@@ -5,7 +5,7 @@ import { FirebaseItemsService } from 'src/app/core/services/firebase/firebase-it
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css'],
+  styleUrls: ['./product-detail.component.scss'],
   providers: [FirebaseItemsService]
 })
 export class ProductDetailComponent implements OnInit {

@@ -4,7 +4,7 @@ import { AuthService } from '../../services/firebase/auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
+  styleUrls: ['./navbar.component.scss'],
   providers: [AuthService]
 })
 export class NavbarComponent implements OnInit {
